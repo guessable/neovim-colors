@@ -21,11 +21,11 @@ let s:colors = {
       \ "vertsplit": get(s:overrides, "vertsplit", { "gui": "#181A1F", "cterm": "59", "cterm16": "15" }),
       \}
 
-function! onedark#GetColors()
+function! GetColors()
   return s:colors
 endfunction
 
-let s:colors = onedark#GetColors()
+let s:colors = GetColors()
 
 let g:onedark_termcolors=256
 
