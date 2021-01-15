@@ -78,12 +78,48 @@ let s:grey = [ s:colors.visual_grey.gui, s:term_grey ]
 
 " statusline
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
-let s:p.normal.left = [ [ s:black, s:blue ], [ s:white, s:grey ] ]
-let s:p.normal.right = [ [ s:black, s:blue ], [ s:white, s:grey ] ]
+
+if(colors_name=='onedark')
+  let s:p.normal.left = [ [ s:black, s:blue ], [ s:white, s:grey ] ]
+  let s:p.normal.right = [ [ s:black, s:blue ], [ s:white, s:grey ] ]
+  let s:p.insert.left = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
+  let s:p.insert.right = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
+  let s:p.tabline.tabsel = [ [ s:black, s:blue ] ]
+elseif(colors_name == 'deus')
+  let s:p.normal.left = [ [ s:black, s:green ], [ s:white, s:grey ] ]
+  let s:p.normal.right = [ [ s:black, s:green ], [ s:white, s:grey ] ]
+  let s:p.insert.left = [ [ s:black, s:blue ], [ s:white, s:grey ] ]
+  let s:p.insert.right = [ [ s:black, s:blue ], [ s:white, s:grey ] ]
+  let s:p.tabline.tabsel = [ [ s:black, s:green ] ]
+elseif(colors_name == 'dracula')
+  let s:p.normal.left = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
+  let s:p.normal.right = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
+  let s:p.insert.left = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
+  let s:p.insert.right = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
+  let s:p.tabline.tabsel = [ [ s:black, s:purple ] ]
+elseif(colors_name == 'ayu')
+  let s:p.normal.left = [ [ s:black, s:blue ], [ s:white, s:grey ] ]
+  let s:p.normal.right = [ [ s:black, s:blue ], [ s:white, s:grey ] ]
+  let s:p.insert.left = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
+  let s:p.insert.right = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
+  let s:p.tabline.tabsel = [ [ s:black, s:blue ] ]
+elseif(colors_name=='oceanic_material')
+  let s:p.normal.left = [ [ s:black, s:yellow ], [ s:white, s:grey ] ]
+  let s:p.normal.right = [ [ s:black, s:yellow ], [ s:white, s:grey ] ]
+  let s:p.insert.left = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
+  let s:p.insert.right = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
+  let s:p.tabline.tabsel = [ [ s:black, s:yellow ] ]
+else
+  let s:p.normal.left = [ [ s:black, s:blue ], [ s:white, s:grey ] ]
+  let s:p.normal.right = [ [ s:black, s:blue ], [ s:white, s:grey ] ]
+  let s:p.insert.left = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
+  let s:p.insert.right = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
+  let s:p.tabline.tabsel = [ [ s:black, s:blue ] ]
+endif
+
 let s:p.inactive.left =  [ [ s:white, s:grey ], [ s:white, s:grey ] ]
 let s:p.inactive.right = [ [ s:black, s:white ], [ s:black, s:white ] ]
-let s:p.insert.left = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
-let s:p.insert.right = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
+
 let s:p.replace.left = [ [ s:black, s:red ], [ s:white, s:grey ] ]
 let s:p.replace.right = [ [ s:black, s:red ], [ s:white, s:grey ] ]
 let s:p.visual.left = [ [ s:black, s:red ], [ s:white, s:grey ] ]
@@ -93,7 +129,6 @@ let s:p.inactive.middle = [ [ s:white, s:black ] ]
 
 " tabline
 let s:p.tabline.left = [ [ s:white, s:grey ] ]
-let s:p.tabline.tabsel = [ [ s:black, s:blue ] ]
 let s:p.tabline.middle = [ [ s:white, s:black ] ]
 let s:p.tabline.right = [ [ s:white, s:grey ] ]
 let s:p.normal.error = [ [ s:black, s:red ] ]
