@@ -10,7 +10,6 @@ let s:colors = {
       \ "purple": get(s:overrides, "purple", { "gui": "#C678DD", "cterm": "170", "cterm16": "5" }),
       \ "cyan": get(s:overrides, "cyan", { "gui": "#56B6C2", "cterm": "38", "cterm16": "6" }),
       \ "white": get(s:overrides, "white", { "gui": "#ABB2BF", "cterm": "145", "cterm16": "7" }),
-      \ "black": get(s:overrides, "black", { "gui": "#282a36", "cterm": "235", "cterm16": "0" }),
       \ "visual_black": get(s:overrides, "visual_black", { "gui": "NONE", "cterm": "NONE", "cterm16": "0" }),
       \ "comment_grey": get(s:overrides, "comment_grey", { "gui": "#5C6370", "cterm": "59", "cterm16": "15" }),
       \ "gutter_fg_grey": get(s:overrides, "gutter_fg_grey", { "gui": "#4B5263", "cterm": "238", "cterm16": "15" }),
@@ -20,6 +19,25 @@ let s:colors = {
       \ "special_grey": get(s:overrides, "special_grey", { "gui": "#3B4048", "cterm": "238", "cterm16": "15" }),
       \ "vertsplit": get(s:overrides, "vertsplit", { "gui": "#181A1F", "cterm": "59", "cterm16": "15" }),
       \}
+if(colors_name=='onedark')
+  let s:colors.black =
+        \ get(s:overrides, "black", { "gui": "#282C34", "cterm": "235", "cterm16": "0" })
+elseif(colors_name == 'deus')
+  let s:colors.black =
+        \ get(s:overrides, "black", { "gui": "#2c323b", "cterm": "235", "cterm16": "0" })
+elseif(colors_name == 'dracula')
+  let s:colors.black =
+        \ get(s:overrides, "black", { "gui": "#282a36", "cterm": "235", "cterm16": "0" })
+elseif(colors_name == 'ayu')
+  let s:colors.black =
+        \ get(s:overrides, "black", { "gui": "#212733", "cterm": "235", "cterm16": "0" })
+elseif(colors_name=='oceanic_material')
+  let s:colors.black =
+        \ get(s:overrides, "black", { "gui": "#1b2b34", "cterm": "235", "cterm16": "0" })
+else
+  let s:colors.black =
+        \ get(s:overrides, "black", { "gui": "#282C34", "cterm": "235", "cterm16": "0" })
+endif
 
 function! GetColors()
   return s:colors
@@ -60,8 +78,8 @@ let s:grey = [ s:colors.visual_grey.gui, s:term_grey ]
 
 " statusline
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
-let s:p.normal.left = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
-let s:p.normal.right = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
+let s:p.normal.left = [ [ s:black, s:blue ], [ s:white, s:grey ] ]
+let s:p.normal.right = [ [ s:black, s:blue ], [ s:white, s:grey ] ]
 let s:p.inactive.left =  [ [ s:white, s:grey ], [ s:white, s:grey ] ]
 let s:p.inactive.right = [ [ s:black, s:white ], [ s:black, s:white ] ]
 let s:p.insert.left = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
@@ -75,10 +93,10 @@ let s:p.inactive.middle = [ [ s:white, s:black ] ]
 
 " tabline
 let s:p.tabline.left = [ [ s:white, s:grey ] ]
-let s:p.tabline.tabsel = [ [ s:black, s:purple ] ]
+let s:p.tabline.tabsel = [ [ s:black, s:blue ] ]
 let s:p.tabline.middle = [ [ s:white, s:black ] ]
 let s:p.tabline.right = [ [ s:white, s:grey ] ]
 let s:p.normal.error = [ [ s:black, s:red ] ]
 let s:p.normal.warning = [ [ s:black, s:yellow ] ]
 
-let g:lightline#colorscheme#my_dracula#palette = lightline#colorscheme#flatten(s:p)
+let g:lightline#colorscheme#lightline#palette = lightline#colorscheme#flatten(s:p)
