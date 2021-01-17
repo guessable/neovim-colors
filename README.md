@@ -6,3 +6,6 @@
 * ayu
 * deus
 * oceanic-material
+
+## lightline
+`let g:lightline.colorscheme = 'lightline'`

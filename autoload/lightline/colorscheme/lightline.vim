@@ -80,8 +80,8 @@ let s:grey = [ s:colors.visual_grey.gui, s:term_grey ]
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 
 if(colors_name=='onedark')
-  let s:p.normal.left = [ [ s:black, s:blue ], [ s:white, s:grey ] ]
-  let s:p.normal.right = [ [ s:black, s:blue ], [ s:white, s:grey ] ]
+  let s:p.normal.left = [ [ s:black, s:green ], [ s:white, s:grey ] ]
+  let s:p.normal.right = [ [ s:black, s:green ], [ s:white, s:grey ] ]
   let s:p.insert.left = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
   let s:p.insert.right = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
   let s:p.tabline.tabsel = [ [ s:black, s:blue ] ]
