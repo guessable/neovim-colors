@@ -157,7 +157,7 @@ call s:_('StatusLinePart',   s:base6,  s:bg_statusline, 'bold')
 call s:_('StatusLinePartNC', s:base6,  s:bg_statusline, 'bold')
 
 call s:_('Separator', s:fg_alt, 'none')
-call s:_('VertSplit', s:base4,   s:bg, 'none')
+call s:_('VertSplit', s:base0,   s:bg, 'none')
 
 call s:_('Pmenu',        s:fg,              s:bg_popup)
 call s:_('PmenuSel',     s:highlight_color, s:highlight)
