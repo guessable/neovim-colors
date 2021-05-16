@@ -34,6 +34,9 @@ elseif(colors_name == 'ayu')
 elseif(colors_name=='oceanic_material')
   let s:colors.black =
         \ get(s:overrides, "black", { "gui": "#1b2b34", "cterm": "235", "cterm16": "0" })
+elseif(colors_name=='nord')
+  let s:colors.black =
+        \ get(s:overrides, "black", { "gui": "#2E3440", "cterm": "235", "cterm16": "0" })
 else
   let s:colors.black =
         \ get(s:overrides, "black", { "gui": "#282C34", "cterm": "235", "cterm16": "0" })
@@ -109,6 +112,12 @@ elseif(colors_name=='oceanic_material')
   let s:p.insert.left = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
   let s:p.insert.right = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
   let s:p.tabline.tabsel = [ [ s:black, s:yellow ] ]
+elseif(colors_name=='nord')
+  let s:p.normal.left = [ [ s:black, s:red ], [ s:white, s:grey ] ]
+  let s:p.normal.right = [ [ s:black, s:red ], [ s:white, s:grey ] ]
+  let s:p.insert.left = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
+  let s:p.insert.right = [ [ s:black, s:purple ], [ s:white, s:grey ] ]
+  let s:p.tabline.tabsel = [ [ s:black, s:blue ] ]
 else
   let s:p.normal.left = [ [ s:black, s:blue ], [ s:white, s:grey ] ]
   let s:p.normal.right = [ [ s:black, s:blue ], [ s:white, s:grey ] ]
